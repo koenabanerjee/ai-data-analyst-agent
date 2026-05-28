@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    @apply bg-surface-950 text-surface-100 font-sans antialiased;
+    scrollbar-width: thin;
+    scrollbar-color: #4f46e5 #0f172a;
+  }
+
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: #0f172a; }
+  ::-webkit-scrollbar-thumb { background: #4f46e5; border-radius: 3px; }
+
+  h1, h2, h3, h4, h5 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/5 backdrop-blur-md border border-white/10;
+  }
+  
+  .glass-dark {
+    @apply bg-surface-900/80 backdrop-blur-md border border-surface-800;
+  }
+
+  .btn-primary {
+    @apply bg-brand-500 hover:bg-brand-600 text-white font-medium px-5 py-2.5 rounded-xl
+           transition-all duration-200 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply bg-surface-800 hover:bg-surface-700 text-surface-100 font-medium px-5 py-2.5 rounded-xl
+           border border-surface-700 transition-all duration-200 active:scale-95;
+  }
+
+  .btn-ghost {
+    @apply hover:bg-surface-800 text-surface-300 hover:text-surface-100 font-medium px-4 py-2 rounded-lg
+           transition-all duration-200;
+  }
+
+  .card {
+    @apply glass-dark rounded-2xl p-6;
+  }
+
+  .stat-card {
+    @apply card hover:border-brand-500/30 transition-all duration-300 cursor-default;
+  }
+
+  .badge {
+    @apply inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .badge-brand {
+    @apply badge bg-brand-500/20 text-brand-300 border border-brand-500/30;
+  }
+
+  .badge-success {
+    @apply badge bg-emerald-500/20 text-emerald-300 border border-emerald-500/30;
+  }
+
+  .badge-warning {
+    @apply badge bg-amber-500/20 text-amber-300 border border-amber-500/30;
+  }
+
+  .badge-danger {
+    @apply badge bg-red-500/20 text-red-300 border border-red-500/30;
+  }
+
+  .input {
+    @apply w-full bg-surface-900 border border-surface-700 rounded-xl px-4 py-2.5
+           text-surface-100 placeholder-surface-500 focus:outline-none focus:ring-2
+           focus:ring-brand-500/50 focus:border-brand-500 transition-all;
+  }
+
+  .page-header {
+    @apply mb-8;
+  }
+
+  .page-title {
+    @apply text-3xl font-display font-bold text-white mb-2;
+  }
+
+  .page-subtitle {
+    @apply text-surface-400;
+  }
+}
+
+/* Plotly dark override */
+.plotly-graph-div {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Loading shimmer */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.shimmer {
+  background: linear-gradient(90deg, #1e293b 25%, #334155 50%, #1e293b 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Prose styles for markdown */
+.prose-dark {
+  @apply text-surface-200 leading-relaxed;
+}
+.prose-dark h2 {
+  @apply text-xl font-display font-semibold text-white mt-6 mb-3;
+}
+.prose-dark h3 {
+  @apply text-lg font-semibold text-brand-300 mt-4 mb-2;
+}
+.prose-dark p {
+  @apply mb-3;
+}
+.prose-dark ul {
+  @apply list-disc list-inside space-y-1 mb-3 ml-2;
+}
+.prose-dark strong {
+  @apply text-white font-semibold;
+}
+.prose-dark code {
+  @apply font-mono text-sm bg-surface-800 px-1.5 py-0.5 rounded text-brand-300;
+}

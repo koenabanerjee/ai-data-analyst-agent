@@ -1,0 +1,42 @@
+fastapi==0.111.0
+uvicorn[standard]==0.29.0
+python-multipart==0.0.9
+
+# ── Validation / Settings ─────────────────────────────────────────────────────
+pydantic==2.7.1
+pydantic-settings==2.2.1
+
+# ── Database ──────────────────────────────────────────────────────────────────
+sqlalchemy==2.0.30
+aiosqlite==0.20.0
+
+# ── Data / ML  (pinned — all have pre-built Windows wheels, no compiler needed)
+numpy==1.26.4
+pandas==2.2.2
+scikit-learn==1.5.2
+scipy==1.13.1
+
+# ── Visualisation ─────────────────────────────────────────────────────────────
+plotly==5.22.0
+
+# ── File I/O ──────────────────────────────────────────────────────────────────
+openpyxl==3.1.2
+chardet==5.2.0
+aiofiles==23.2.1
+
+# ── PDF ───────────────────────────────────────────────────────────────────────
+reportlab==4.1.0
+pillow==10.4.0
+
+# ── HTTP ──────────────────────────────────────────────────────────────────────
+httpx==0.27.0
+
+# ── AI / Agents ───────────────────────────────────────────────────────────────
+google-generativeai==0.7.2
+langchain==0.2.16
+langchain-core==0.2.38
+langchain-google-genai==1.0.10
+langgraph==0.2.14
+
+# ── Misc ──────────────────────────────────────────────────────────────────────
+python-dotenv==1.0.1
