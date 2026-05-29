@@ -98,3 +98,8 @@ async def root():
         "version": "1.0.0",
         "docs": "/docs",
     }
+
+from app.config import get_settings
+
+settings = get_settings()
+print("API KEY:", settings.google_api_key)
